@@ -1,0 +1,13 @@
+!!!5
+%html
+  %head
+    %title Mek We Dweet TV - Bass Music Pon de Internet
+    %base{ href: '/' }
+    %meta{ name: 'viewport', content:'width=device-width, initial-scale=1' }
+    %meta{ name: 'description', content:'Web TV for the Bass Music !' }
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = yield
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true

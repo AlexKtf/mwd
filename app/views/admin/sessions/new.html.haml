@@ -1,0 +1,7 @@
+#admin-connect
+  %h2 Administration
+  = form_for User.new, as: :user, url: admin_path do |f|
+    = f.text_field :email, autofocus: true
+    = f.password_field :password
+    .form-actions
+      = f.submit 'Se connecter'

@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: mwd_development
+  pool: 5
+  host: localhost
+  username: Alexandre
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: mwd_test
+  host: localhost
+  pool: 5
+  username: Alexandre
+  password:
