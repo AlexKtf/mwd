@@ -5,9 +5,29 @@
     %base{ href: '/' }
     %meta{ name: 'viewport', content:'width=device-width, initial-scale=1' }
     %meta{ name: 'description', content:'Web TV for the Bass Music !' }
-    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': true
     = csrf_meta_tags
   %body
+    - if user_signed_in?
+      %nav.navbar.navbar-inverse
+        .container-fluid
+          .navbar-header
+            %button.navbar-toggle.collapsed{ 'aria-expanded': 'false',
+                                             'data-target': '#bs-example-navbar-collapse-1',
+                                             'data-toggle': 'collapse',
+                                             type: 'button' }
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to 'Admin', admin_dashboard_index_path, class: 'navbar-brand'
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li= link_to 'Dashboard', admin_dashboard_index_path
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                = link_to destroy_user_session_path, method: :delete do
+                  %span.glyphicon.glyphicon-off{ 'aria-hidden': true }
     = yield
 
-    = javascript_include_tag 'admin', 'data-turbolinks-track' => true
+    = javascript_include_tag 'admin', 'data-turbolinks-track': true

@@ -1,0 +1,13 @@
+@mixin background-img-with-blur($img, $blur)
+  position: absolute
+  width: 100%
+  height: 100%
+  background-image: image-url($img)
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  -webkit-filter: blur($blur)
+  -moz-filter: blur($blur)
+  -o-filter: blur($blur)
+  -ms-filter: blur($blur)
+  filter: blur($blur)
